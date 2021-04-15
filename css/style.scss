@@ -1,0 +1,463 @@
+$primary-color: #e88183;
+$secondary-color: #f1d98a;
+$caption-text-color: #999999;
+$third-color: #95e1d3;
+$light-gray-bc-color: #f8f8f8;
+
+$font-1: "Montserrat", sans-serif;
+$font-2: "Roboto", sans-serif;
+$font-3: "Kaushan Script", cursive;
+
+$wrapper: 1920px;
+$container: 1200px;
+
+html {
+  font-size: 62.5%;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  font-family: $font-1;
+}
+
+.wrapper {
+  max-width: $wrapper;
+  margin: 0 auto;
+}
+
+.container {
+  max-width: $container + 30px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+// =================== HEADER ===================
+.header {
+    background: linear-gradient(to bottom, rgba($primary-color, 0.8), rgba($secondary-color, 0.8)), url("./../images/bird-bc.jpg") no-repeat center / cover;
+
+    &-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        position: relative;
+        padding: 3rem 0 0 0;
+    }
+
+    &-logo {
+        color: #FFF;
+        font-size: 3rem;
+        font-weight: bold;
+    }
+
+    .menu-toggle {
+        font-size: 1.6rem;
+        color: #fff;
+        display: none;
+    }
+
+    &-nav {
+        display: flex;
+    }
+
+    &-nav-item:not(:first-child) {
+        margin-left: 5.8rem;
+    }
+
+    &-nav-link {
+        display: inline-block;
+        color: #fff;
+        font-size: 1.4rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        padding: 0 0 1.2rem 0;
+        border-bottom: 0.3rem solid transparent;
+        transition: all 0.15s linear;
+    }
+
+    &-nav-link:hover {
+        color: $secondary-color;
+        border-bottom-color: $secondary-color;
+    }
+
+    &-nav-link-icon {
+        color: #fff;
+    }
+
+    &-content {
+        margin: 16.5rem 0 15.5rem 0;
+        text-align: center;
+        color: #fff;
+
+        &-caption {
+            font-size: 7.2rem;
+            font-family: $font-3;
+            margin: 0 0 4.5rem 0;
+        }
+        &-main {
+            display: inline-block;
+            word-break: break-word;
+            font-weight: bold;
+            font-size: 15rem;
+            padding: 0 0 7.2rem 0;
+            margin: 0 0 5rem 0;
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                height: 0.3rem;
+                width: 9%;
+                background-color: #fff;
+            }
+        }
+
+        &-button {
+            a {
+                display: inline-block;
+                color: #fff;
+                padding: 1rem 3rem;
+                font-weight: bold;
+                font-size: 1.4rem;
+                border: 0.4rem solid #fff;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    &-bottom {
+        color: rgba(255, 255, 255, 0.75);
+        padding: 0 0 3rem 0;
+
+        &-list {
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            margin: 0 0 0 -3rem;
+        }
+
+        &-list-item {
+            width: calc(25% - 3rem);
+            margin: 0 0 0 3rem;
+            position: relative;
+            padding: 2.5rem 0 0 0;
+            transition: all 0.15s linear;
+            cursor: pointer;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 0.3rem;
+                transition: all 0.15s linear;
+                background-color: rgba(255, 255, 255, 0.65);
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 30%;
+                height: 0.3rem;
+                background-color: $primary-color;
+                transition: all 0.15s linear;
+                visibility: hidden;
+                opacity: 0;
+            }
+
+            &:hover {
+                &::before {
+                    background-color: rgba(255, 255, 255, 0.95);
+                }
+                &::after {
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+
+            .number {
+                font-size: 1.4rem;
+                font-weight: bold;
+            }
+
+            .text {
+                font-size: 1.15rem;
+                margin: 0 0 0 0.2rem;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    @media screen and (max-width: 1023px) {
+        .header-content-caption {
+            font-size: 5rem;
+        }
+
+        .header-content-main {
+            font-size: 9rem;
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        .header-content {
+            margin: 8.5rem 0 8.5rem 0;
+        }        
+        
+        .header-content-caption {
+            font-size: 3rem;
+        }
+        
+        .header-content-main {
+            font-size: 5rem;
+        }
+
+        .header-bottom {
+            .text {
+                display: none;
+            }
+        }
+        .menu-toggle {
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .header-nav {
+            position: absolute;
+            top: calc(100% + 10px);
+            left: 0;
+            width: 100%;
+            flex-direction: column;
+            transition: all 0.15s linear;
+            border-radius: 5px;
+            background-color: #fff;
+            visibility: hidden;
+            opacity: 0;
+            
+            &-item {
+                margin: 0;
+                padding: 10px;
+                width: 100%;
+
+                &:active {
+                    color: $secondary-color;
+                }
+            }
+            
+            &-link {
+                color: $primary-color;
+                width: 100%;
+                font-weight: bold;
+
+                &-icon {
+                    color: $primary-color;
+                    font-size: 1.8rem;
+                }
+            }
+        }
+
+        .is-toggled {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}
+// =================== END OF HEADER ===================
+
+
+// =================== HEADER BOX ===================
+.header-box {
+    text-align: center;
+
+    &-caption {
+        font-family: $font-3;
+        font-size: 2.4rem;
+        font-style: italic;
+        padding: 0 0 2.3rem 0;
+    }
+
+    &-title {
+        text-transform: uppercase;
+        font-size: 3rem;
+        font-weight: bold;
+        padding: 0 0 3.8rem 0;
+        margin: 0 0 3.8rem;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 6.2rem;
+            height: 0.4rem;
+            background-color: $primary-color;
+        }
+    }
+
+    &-description {
+        color: $caption-text-color;
+        font-size: 1.5rem;
+        line-height: 1.4;
+        max-width: 97rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+// =================== END OF HEADER BOX ===================
+
+// =================== ABOUT SECTION ===================
+.about-section {
+    padding: 9.2rem 0 10.9rem 0;
+
+    .about-images {
+        padding: 10rem 0 0 0;
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: -3rem;
+
+        .img-item {
+            margin-left: 3rem;
+            width: calc(33.333333% - 3rem);
+            position: relative;
+            transition: transform 0.15s linear;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: -13;
+                background-color: $third-color;
+                transition: transform 0.15s linear;
+            }
+
+            &:hover {
+                transform: translate(-1rem, -1rem);
+
+                .img-overlay {
+                    visibility: visible;
+                    opacity: 1;
+                }
+
+                &::after {
+                    transform: translate(1rem, 1rem);
+                }
+            }
+
+            .img-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 13;
+                width: 100%;
+                height: 100%;
+                background-image: linear-gradient(to bottom, rgba($primary-color, 0.8), rgba($secondary-color, 0.8));
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                color: #fff;
+                transition: all 0.15s linear;
+                visibility: hidden;
+                opacity: 0;
+
+                .about-icon {
+                    font-weight: bold;
+                    font-size: 1.6rem;
+                    margin: 0 0 0.65rem 0;
+                }
+
+                .about-text {
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    font-size: 1.6rem;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        .about-images {
+            margin: 0;
+            .img-item {
+                margin: 0 0 1.5rem 0;
+                width: 100%;
+            }
+        }
+    }
+}
+// =================== END OF ABOUT SECTION ===================
+
+// =================== STATISTICS SECTION ===================
+.statistics-section {
+    background-color: $third-color;
+
+    .statistics-list {
+        display: flex;
+        flex-wrap: wrap;
+
+        &-item {
+            padding: 9rem 0;
+            width: 20%;
+            border-left: 1px solid #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+
+            .statistics-number {
+                font-size: 7.2rem;
+                font-weight: bold;
+                margin: 0 0 3rem 0;
+            }
+
+            .statistics-text {
+                font-size: 1.4rem;
+                text-transform: uppercase;
+                line-height: 1.4;
+            }
+        }
+
+        &-item:last-child {
+            border-right: 1px solid #fff;
+        }
+
+    }
+
+    @media screen and (max-width: 767px) {
+        .statistics-list {
+            &-item {
+                padding: 5rem 0;
+                width: 100%;
+            }
+
+            &-item:not(:last-child) {
+                border-bottom: 1px solid #fff;
+            }
+
+            &-item:not(:nth-child(69)) {
+                border-right: 0;
+                border-left: 0;
+            }
+        }
+    }
+}
+// =================== END OF STATISTICS SECTION ===================
