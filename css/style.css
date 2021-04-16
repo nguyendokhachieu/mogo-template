@@ -34,6 +34,7 @@ body {
   justify-content: space-between;
   align-items: baseline;
   position: relative;
+  z-index: 11;
   padding: 3rem 0 0 0;
 }
 .header-logo {
@@ -87,12 +88,14 @@ body {
   padding: 0 0 7.2rem 0;
   margin: 0 0 5rem 0;
   position: relative;
+  z-index: 11;
 }
 .header-content-main::after {
   content: "";
   position: absolute;
   bottom: 0;
   left: 50%;
+  z-index: 11;
   transform: translateX(-50%);
   height: 0.3rem;
   width: 9%;
@@ -192,6 +195,7 @@ body {
     position: absolute;
     top: calc(100% + 10px);
     left: 0;
+    z-index: 19;
     width: 100%;
     flex-direction: column;
     transition: all 0.15s linear;
@@ -374,6 +378,234 @@ body {
   .statistics-section .statistics-list-item:not(:nth-child(69)) {
     border-right: 0;
     border-left: 0;
+  }
+}
+
+.services-section {
+  padding: 5.5rem 0;
+}
+.services-section .services-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5rem 0;
+}
+.services-section .services-list + .services-list {
+  border-top: 1px solid #999;
+  padding-top: 5rem;
+}
+.services-section .services-list-item {
+  width: calc(33.333333% - 3rem);
+  margin-left: 3rem;
+  display: flex;
+}
+.services-section .services-list-item .img-icon-wrap {
+  width: 20%;
+}
+.services-section .services-list-item .item-content {
+  width: 80%;
+}
+.services-section .services-list-item .item-content-title {
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+}
+.services-section .services-list-item .item-content-caption {
+  color: #999999;
+  line-height: 1.4;
+  font-size: 1.3rem;
+}
+@media screen and (max-width: 767px) {
+  .services-section .services-list {
+    padding: 0;
+  }
+  .services-section .services-list .services-list-item {
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+  .services-section .services-list .services-list-item .item-content-title {
+    margin-bottom: 1rem;
+  }
+}
+
+.device-section {
+  padding: 11rem 0 0 0;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.5)), url("./../images/devices.jpg") no-repeat center/cover;
+}
+@media screen and (max-width: 767px) {
+  .device-section {
+    padding: 5.5rem 0 0 0;
+  }
+}
+.device-section .device-media {
+  position: relative;
+}
+.device-section .device-media-img:first-child {
+  margin: 0 auto;
+  display: block;
+}
+.device-section .device-media-img:nth-child(2) {
+  position: absolute;
+  bottom: -9rem;
+  left: calc(50% + 25rem);
+  transform: translateX(-50%);
+}
+@media screen and (max-width: 767px) {
+  .device-section .device-media-img:nth-child(2) {
+    bottom: -8rem;
+    left: calc(50% + 7rem);
+    width: 18rem;
+    height: 30rem;
+  }
+}
+
+.wedo-section {
+  padding: 12rem 0;
+}
+.wedo-section .wedo-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 9rem 0 0 0;
+}
+.wedo-section .wedo-content .wedo-media-wrap {
+  width: calc(50% - 1.5rem);
+}
+.wedo-section .wedo-content .wedo-media-wrap .wedo-media-img {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+.wedo-section .wedo-content .wedo-accordian {
+  width: calc(50% - 1.5rem);
+}
+.wedo-section .wedo-content .wedo-accordian .accordian-item:not(:last-child) {
+  margin-bottom: 1rem;
+}
+.wedo-section .wedo-content .wedo-accordian .accordian-item-header {
+  padding: 1.5rem;
+  display: flex;
+  justify-content: flex-start;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+.wedo-section .wedo-content .wedo-accordian .accordian-item-header .header-icon {
+  font-size: 1.5rem;
+}
+.wedo-section .wedo-content .wedo-accordian .accordian-item-header .accordian-item-title {
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  margin-left: 1.5rem;
+}
+.wedo-section .wedo-content .wedo-accordian .accordian-item-header .arrow-icon {
+  margin-left: auto;
+  font-size: 1.4rem;
+}
+.wedo-section .wedo-content .wedo-accordian .accordian-item-header:hover + .accordian-item-content {
+  display: block;
+}
+.wedo-section .wedo-content .wedo-accordian .accordian-item-content {
+  border: 1px solid #ccc;
+  border-top: 0;
+  padding: 2rem;
+  display: none;
+}
+.wedo-section .wedo-content .wedo-accordian .accordian-item-content-wrap {
+  height: 14rem;
+  overflow-y: auto;
+  padding: 0 2rem 0 0;
+  font-size: 1.5rem;
+  font-style: italic;
+  line-height: 1.6;
+}
+@media screen and (max-width: 767px) {
+  .wedo-section .wedo-content .wedo-media-wrap {
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+  .wedo-section .wedo-content .wedo-accordian {
+    width: 100%;
+  }
+}
+
+.quote-section {
+  background-color: #f8f8f8;
+  padding: 6.5rem 0;
+  position: relative;
+}
+.quote-section .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.quote-section .arrow-icon {
+  padding: 1rem 2.5rem;
+  cursor: pointer;
+  color: #999999;
+  font-size: 2rem;
+}
+.quote-section .quote-content {
+  padding: 0 4rem;
+  display: flex;
+}
+.quote-section .quote-content .quote-icon-wrap {
+  border: 3px solid #95e1d3;
+  padding: 4.5rem;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.quote-section .quote-content .quote-info {
+  margin-left: 6rem;
+}
+.quote-section .quote-content .quote-info .quote-desc {
+  font-size: 2.4rem;
+  font-style: italic;
+  line-height: 1.6;
+  color: #999999;
+  margin-bottom: 1.5rem;
+}
+.quote-section .quote-content .quote-info .quote-author {
+  font-family: "Kaushan Script", cursive;
+  font-size: 2.4rem;
+  position: relative;
+  padding-left: 7rem;
+}
+.quote-section .quote-content .quote-info .quote-author::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6rem;
+  height: 4px;
+  background-color: #e88183;
+}
+@media screen and (max-width: 767px) {
+  .quote-section .quote-content {
+    flex-direction: column;
+  }
+  .quote-section .quote-content .quote-info {
+    margin: 1.5rem 0 0 0;
+  }
+  .quote-section .quote-content .quote-info .quote-desc {
+    font-size: 2rem;
+    text-align: justify;
+  }
+  .quote-section .quote-content .quote-info .quote-author {
+    font-size: 1.9rem;
+  }
+  .quote-section .arrow-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+  }
+  .quote-section .fa-arrow-left {
+    left: 0;
+  }
+  .quote-section .fa-arrow-right {
+    right: 0;
   }
 }
 

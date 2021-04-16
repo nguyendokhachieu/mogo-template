@@ -48,6 +48,7 @@ body {
         justify-content: space-between;
         align-items: baseline;
         position: relative;
+        z-index: 11;
         padding: 3rem 0 0 0;
     }
 
@@ -109,12 +110,14 @@ body {
             padding: 0 0 7.2rem 0;
             margin: 0 0 5rem 0;
             position: relative;
+            z-index: 11;
 
             &::after {
                 content: '';
                 position: absolute;
                 bottom: 0;
                 left: 50%;
+                z-index: 11;
                 transform: translateX(-50%);
                 height: 0.3rem;
                 width: 9%;
@@ -238,6 +241,7 @@ body {
             position: absolute;
             top: calc(100% + 10px);
             left: 0;
+            z-index: 19;
             width: 100%;
             flex-direction: column;
             transition: all 0.15s linear;
@@ -461,3 +465,287 @@ body {
     }
 }
 // =================== END OF STATISTICS SECTION ===================
+
+// =================== SERVICES SECTION ===================
+.services-section {
+    padding: 5.5rem 0;
+
+    .services-list {
+        display: flex;
+        flex-wrap: wrap;
+        // margin-left: -3rem;
+        padding: 5rem 0;
+
+        +.services-list {
+            border-top: 1px solid #999;
+            padding-top: 5rem;
+        }
+        
+        &-item {
+            width: calc(33.333333% - 3rem);
+            margin-left: 3rem;
+            display: flex;
+
+            .img-icon-wrap {
+                width: 20%;
+            }
+            
+            .item-content {
+                // margin-left: 3rem;
+                width: 80%;
+
+                &-title {
+                    text-transform: uppercase;
+                    font-size: 1.4rem;
+                    margin-bottom: 2rem;
+                }
+
+                &-caption {
+                    color: $caption-text-color;
+                    line-height: 1.4;
+                    font-size: 1.3rem;
+                }
+            }
+        }
+
+        @media screen and (max-width: 767px) {  
+            padding: 0;
+
+            .services-list-item {
+                width: 100%;
+                margin-bottom: 3rem;
+
+                .item-content {
+                    &-title {
+                        margin-bottom: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+// =================== END OF SERVICES SECTION ===================
+
+// =================== DEVICES SECTION ===================
+.device-section {
+    padding: 11rem 0 0 0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.5)),
+    url("./../images/devices.jpg") no-repeat center / cover;
+
+    @media screen and (max-width: 767px) {
+        padding: 5.5rem 0 0 0;
+    }
+
+    .device-media {
+        position: relative;
+
+        &-img:first-child {
+            margin: 0 auto;
+            display: block;
+        }
+        &-img:nth-child(2) {
+            position: absolute;
+            bottom: -9rem;
+            left: calc(50% + 25rem);
+            transform: translateX(-50%);
+        }
+
+        @media screen and (max-width: 767px) {
+            &-img:nth-child(2) {
+                bottom: -8rem;
+                left: calc(50% + 7rem);
+                width: 18rem;
+                height: 30rem;
+            }
+        }
+    }
+}
+// =================== END OF DEVICES SECTION ===================
+
+// =================== WEDO SECTION ===================
+.wedo-section {
+    padding: 12rem 0;
+
+    .wedo-content {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin: 9rem 0 0 0;
+
+        .wedo-media-wrap {
+            width: calc(50% - 1.5rem);
+
+            .wedo-media-img {
+                object-fit: cover;
+                object-position: center;
+                width: 100%;
+            }
+        }
+
+        .wedo-accordian {
+            width: calc(50% - 1.5rem);
+
+            .accordian-item {
+                &:not(:last-child) {
+                    margin-bottom: 1rem;
+                }
+
+                &-header {
+                    padding: 1.5rem;
+                    display: flex;
+                    justify-content: flex-start;
+                    border: 1px solid #ccc;
+                    cursor: pointer;
+
+                    .header-icon {
+                        font-size: 1.5rem;
+                    }
+
+                    .accordian-item-title {
+                        text-transform: uppercase;
+                        font-size: 1.4rem;
+                        margin-left: 1.5rem;
+                    }
+
+                    .arrow-icon {
+                        margin-left: auto;
+                        font-size: 1.4rem;
+                    }
+
+                    &:hover {
+                        &+.accordian-item-content {
+                            display: block;
+                        }
+                    }
+                }
+
+                &-content {
+                    border: 1px solid #ccc;
+                    border-top: 0;
+                    padding: 2rem;
+                    display: none;
+                    
+                    &-wrap {
+                        height: 14rem;
+                        overflow-y: auto;
+                        padding: 0 2rem 0 0;
+                        font-size: 1.5rem;
+                        font-style: italic;
+                        line-height: 1.6;
+                    }
+                }
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            .wedo-media-wrap {
+                width: 100%;
+                margin-bottom: 1.5rem;
+            }
+            
+            .wedo-accordian {
+                width: 100%;
+            }
+        }
+    }
+}
+// =================== END OF WEDO SECTION ===================
+
+// =================== QUOTE SECTION ===================
+.quote-section {
+    background-color: #f8f8f8;
+    padding: 6.5rem 0;
+    position: relative;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .arrow-icon {
+        padding: 1rem 2.5rem;
+        cursor: pointer;
+        color: $caption-text-color;
+        font-size: 2rem;
+    }
+
+    .quote-content {
+        padding: 0 4rem;
+        display: flex;
+
+        .quote-icon-wrap {
+            border: 3px solid $third-color;
+            padding: 4.5rem;
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .quote-info {
+            margin-left: 6rem;
+
+            .quote-desc {
+                font-size: 2.4rem;
+                font-style: italic;
+                line-height: 1.6;
+                color: $caption-text-color;
+                margin-bottom: 1.5rem;
+            }
+
+            .quote-author {
+                font-family: $font-3;
+                font-size: 2.4rem;
+                position: relative;
+                padding-left: 7rem;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 6rem;
+                    height: 4px;
+                    background-color: $primary-color;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        .quote-content {
+            flex-direction: column;
+
+            .quote-info {
+                margin: 1.5rem 0 0 0;
+
+                .quote-desc {
+                    font-size: 2rem;
+                    text-align: justify;
+                }
+
+                .quote-author {
+                    font-size: 1.9rem;
+                }
+            }
+        }
+
+        .arrow-icon {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+        }
+
+        .fa-arrow-left {
+            left: 0;
+        }
+
+        .fa-arrow-right {
+            right: 0;
+        }
+    }
+}
+// =================== END OF QUOTE SECTION ===================
