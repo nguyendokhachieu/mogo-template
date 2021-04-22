@@ -29,6 +29,7 @@ body {
   width: 1920px;
   max-width: 100%;
   margin: 0 auto;
+  position: relative;
 }
 
 .container {
@@ -52,6 +53,51 @@ body {
   z-index: 1;
 }
 
+.body-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.75);
+  z-index: -53;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.15s ease-in-out;
+}
+
+.display-block-smooth {
+  z-index: 53;
+  visibility: visible;
+  opacity: 1;
+}
+
+.overlay-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.search-form {
+  display: flex;
+}
+
+.search-input {
+  width: 100%;
+  background-color: transparent;
+  border: 2px solid #e88183;
+  outline: none;
+  padding: 1.75rem 2.5rem;
+  font-size: 1.7rem;
+  font-style: italic;
+  border-radius: 5px;
+  color: #e88183;
+}
+
 .header {
   background: linear-gradient(to bottom, rgba(232, 129, 131, 0.8), rgba(241, 217, 138, 0.8)), url("./../images/bird-bc.jpg") no-repeat center/cover;
 }
@@ -64,7 +110,7 @@ body {
   padding: 3rem 0 0 0;
 }
 .header-logo {
-  color: #FFF;
+  color: #fff;
   font-size: 3rem;
   font-weight: bold;
 }

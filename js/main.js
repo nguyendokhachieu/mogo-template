@@ -2,6 +2,9 @@ $(document).ready(function () {
   const headerNav = document.getElementById("header-nav");
   const toggleButton = document.getElementById("menu-toggle");
 
+  const searchToggleButton = document.getElementById("search-toggle");
+  const bodyOverlay = document.getElementById("body-overlay");
+
   $(".quote-list").slick();
 
   $("button.slick-arrow.slick-prev")
@@ -10,6 +13,15 @@ $(document).ready(function () {
   $("button.slick-arrow.slick-next")
     .addClass("fa fa-arrow-right arrow-icon")
     .text("");
+
+    var isSearchToggled = false;
+  searchToggleButton.addEventListener("click", (e) => {
+    if (isSearchToggled == false) {
+      // bodyOverlay.setAttribute('style', "display:block");
+      bodyOverlay.classList.add("display-block-smooth");
+      isSearchToggled = true;
+    }
+  })
 
   var isMenuToggled = false;
   window.addEventListener("click", (e) => {
@@ -32,6 +44,14 @@ $(document).ready(function () {
         headerNav.classList.remove("is-toggled");
         toggleButton.classList.remove("outline-dash");
         isMenuToggled = false;
+      }
+    }
+
+    if (menuClasses.indexOf("body-overlay") != -1) {
+      if (isSearchToggled == true) {
+        // bodyOverlay.setAttribute("style", "display: none");
+        bodyOverlay.classList.remove("display-block-smooth");
+        isSearchToggled = false;
       }
     }
   });
