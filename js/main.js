@@ -19,6 +19,7 @@ $(document).ready(function () {
     if (isSearchToggled == false) {
       // bodyOverlay.setAttribute('style', "display:block");
       bodyOverlay.classList.add("display-block-smooth");
+      document.getElementById("search-input").focus();
       isSearchToggled = true;
     }
   })

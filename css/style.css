@@ -5,6 +5,9 @@ html {
 a {
   text-decoration: none;
 }
+a:hover {
+  text-decoration: none;
+}
 
 img {
   display: block;
@@ -59,7 +62,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(0, 0, 0, 0.75);
   z-index: -53;
   visibility: hidden;
   opacity: 0;
@@ -88,8 +91,8 @@ body {
 
 .search-input {
   width: 100%;
-  background-color: transparent;
-  border: 2px solid #e88183;
+  background-color: rgba(241, 217, 138, 0.4);
+  border: 0;
   outline: none;
   padding: 1.75rem 2.5rem;
   font-size: 1.7rem;

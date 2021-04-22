@@ -17,6 +17,10 @@ html {
 
 a {
   text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 img {
@@ -72,10 +76,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(255, 255, 255, 0.75);
-  // z-index: 53;
-  // display: none;
-
+  background-color: rgba(0, 0, 0, 0.75);
   z-index: -53;
   visibility: hidden;
   opacity: 0;
@@ -94,9 +95,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 90%;
-  // min-height: 3rem;
   background-color: #fff;
-  // box-shadow: 0 0 3px 2px $secondary-color;
   border-radius: 5px;
 }
 
@@ -106,8 +105,8 @@ body {
 
 .search-input {
   width: 100%;
-  background-color: transparent;
-  border: 2px solid $primary-color;
+  background-color: rgba($secondary-color, 0.4);
+  border: 0;
   outline: none;
   padding: 1.75rem 2.5rem;
   font-size: 1.7rem;
